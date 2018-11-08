@@ -9,12 +9,13 @@
 		  	<h1>{{text}}</h1>
 		  	<table style="width:100%">
 	  			<tr>
-	  				<td align="center"><img src={{five_card_image}} width="250">
+	  				{% for card in tarot_reading %}
+	  				<td align="center">
+	  					<img src="static/tarotDeck/{{card[2]}}" width="250">
+	  					<p class="card" align="center"><b>{{card[0]}}</b><br>
+	  						{{card[1]}}</p>
 	  				</td>
-	  				<td align="center"><img src={{five_card_image}} width="250">
-	  				</td>
-	  				<td align="center"><img src={{five_card_image}} width="250">
-	  				</td>
+	  				{% endfor %}
 	  			</tr>
 	  		</table>
 		</div>

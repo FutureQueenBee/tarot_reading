@@ -12,7 +12,9 @@ TAROT_DECK_DICT = {}
 
 with open("tarot-deck.tsv") as tsv:
 	for line in csv.reader(tsv, dialect="excel-tab"):
-		tarot_deck_dict[line[0]] = line[1:]
+		TAROT_DECK_DICT[line[0]] = line[1:]
+
+print(TAROT_DECK_DICT)
 
 @app.route("/")
 def home():
@@ -33,12 +35,13 @@ def deck_selection():
 
 @app.route("/final_reading", methods=['POST'])
 def final_five():
-	cards = request.form
-	print(cards)
-
+	final_cards = random.sample(xrange(78),3)
+	tarot_reading = []
+	for card in final_cards:
+		tarot_reading.append(TAROT_DECK_DICT[str(card)])
 	text = "Here are your cards ..."
 	five_card_image = "static/53c0cce811d9a_thumb900.jpg"
-	return render_template("final_cards.html", text=text, five_card_image=five_card_image)
+	return render_template("final_cards.html", text=text, tarot_reading=tarot_reading)
 
 if __name__ == "__main__":
     app.run(debug=True)
