@@ -1,7 +1,18 @@
 from flask import Flask, request, redirect, url_for, render_template, jsonify
 import jinja2
+import csv
+import random
+from random import shuffle
 
 app = Flask(__name__)
+
+tarot_tsv_file = open("tarot-deck.tsv", "r")
+# Open tsv Tarot deck file
+TAROT_DECK_DICT = {}
+
+with open("tarot-deck.tsv") as tsv:
+	for line in csv.reader(tsv, dialect="excel-tab"):
+		tarot_deck_dict[line[0]] = line[1:]
 
 @app.route("/")
 def home():
