@@ -10,7 +10,7 @@ def main():
 	
 	user_name = raw_input("What is your name?")
 
-	tarot_tsv_file = open("tarot-deck-file.tsv", "r")
+	tarot_tsv_file = open("tarot-deck.tsv", "r")
 	# Open tsv Tarot deck file
 	tarot_deck_dict = {}
 
