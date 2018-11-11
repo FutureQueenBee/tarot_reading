@@ -7,8 +7,8 @@ from twilio.rest import Client
 
 app = Flask(__name__)
 
-account_sid = "ACd36fd83d6406fbeea8502cbcf815f0b0"
-auth_token = "77771cf7ff67a90fb79fd9c85566377c"
+account_sid = 
+auth_token = 
 client = Client(account_sid, auth_token)
 
 tarot_tsv_file = open("tarot-deck.tsv", "r")
