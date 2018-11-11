@@ -1,7 +1,7 @@
 .container {
     position: relative;
-    text-align: center;
-    color: white;
+    text-align: left;
+    color: black;
     text-shadow: 1.5px 1px rgba(0, 0, 0, 0.5);
 
 }
@@ -17,12 +17,22 @@
     -o-animation: fadein 2s;
 }
 
-.card {
+input[type=checkbox] {
+    width: 30px;
+    height: 30px;
+}
+
+input[type=submit] {
+    width: 20em;
+    height: 2em;
+}
+
+/*.card {
     position: relative;
     text-align: center;
     color: white;
     font-size: 20px;
-}
+}      */                                                                                                                                     
 
 @keyframes fadein {
     from {
