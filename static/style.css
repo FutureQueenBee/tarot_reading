@@ -1,0 +1,68 @@
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+    text-shadow: 1.5px 1px rgba(0, 0, 0, 0.5);
+
+}
+
+.centered {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s;
+}
+
+input[type=checkbox] {
+    width: 30px;
+    height: 30px;
+}
+
+input[type=submit] {
+    width: 20em;
+    height: 2em;
+}
+
+/*.card {
+    position: relative;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}      */                                                                                                                                     
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
