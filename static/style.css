@@ -3,18 +3,6 @@
     text-align: center;
     color: white;
     text-shadow: 1.5px 1px rgba(0, 0, 0, 0.5);
-
-}
-
-.centered {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: fadein 2s;
-    -moz-animation: fadein 2s; /* Firefox */
-    -webkit-animation: fadein 2s; /* Safari and Chrome */
-    -o-animation: fadein 2s;
 }
 
 input[type=checkbox] {
@@ -27,12 +15,16 @@ input[type=submit] {
     height: 2em;
 }
 
-/*.card {
-    position: relative;
-    text-align: center;
-    color: white;
-    font-size: 20px;
-}      */                                                                                                                                     
+.centered {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox 
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s;
+}   */                                                                                                                                        
 
 @keyframes fadein {
     from {
