@@ -3,8 +3,13 @@ import jinja2
 import csv
 import random
 from random import shuffle
+from twilio.rest import Client
 
 app = Flask(__name__)
+
+account_sid = "ACd36fd83d6406fbeea8502cbcf815f0b0"
+auth_token = "77771cf7ff67a90fb79fd9c85566377c"
+client = Client(account_sid, auth_token)
 
 tarot_tsv_file = open("tarot-deck.tsv", "r")
 # Open tsv Tarot deck file
@@ -33,7 +38,7 @@ def deck_selection():
 	five_card_image = "static/53c0cce811d9a_thumb900.jpg"
 	return render_template("five_cards.html", text=text, five_card_image=five_card_image)
 
-@app.route("/final_reading", methods=['POST'])
+@app.route("/final_reading", methods=['GET', 'POST'])
 def final_five():
 	final_cards = random.sample(xrange(78),3)
 	tarot_reading = []
@@ -42,6 +47,13 @@ def final_five():
 	text = "Here are your cards ..."
 	five_card_image = "static/53c0cce811d9a_thumb900.jpg"
 	return render_template("final_cards.html", text=text, tarot_reading=tarot_reading)
+
+@app.route("/text", methods=['GET', 'POST'])
+def text_reading():
+	number = request.form
+	print(number)
+	
+	return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
