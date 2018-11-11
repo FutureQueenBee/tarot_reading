@@ -1,0 +1,23 @@
+<html>
+<head>
+	<link rel="stylesheet" href="static/style.css">
+</head>
+	<body>
+		<div class="container">
+		  <img src="static/Cloth-Fabric-Background-5.jpg" alt="Snow" style="width:100%;">
+		  <div class="centered">
+		  	<h1>{{text}}</h1>
+		  	<table style="width:100%">
+	  			<tr>
+	  				{% for card in tarot_reading %}
+	  				<td align="center">
+	  					<img src="static/tarotDeck/{{card[2]}}" width="250">
+	  					<p class="card" align="center"><b>{{card[0]}}</b><br>
+	  						{{card[1]}}</p>
+	  				</td>
+	  				{% endfor %}
+	  			</tr>
+	  		</table>
+		</div>
+	</div>
+</body>

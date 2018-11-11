@@ -5,6 +5,8 @@ Click==7.0
 Flask==1.0.2
 itsdangerous==1.1.0
 Jinja2==2.10
+Werkzeug==0.14.1
+WTForms==2.2.1
 macholib==1.5
 MarkupSafe==1.0
 matplotlib==1.1.1
