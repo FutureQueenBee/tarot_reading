@@ -4,17 +4,13 @@ import csv
 import random
 from random import shuffle
 
-app = Flask(__name__)
-
-tarot_tsv_file = open("tarot-deck.tsv", "r")
-# Open tsv Tarot deck file
 TAROT_DECK_DICT = {}
 
-with open("tarot-deck.tsv") as tsv:
+with open("static/tarot-deck.tsv") as tsv:
 	for line in csv.reader(tsv, dialect="excel-tab"):
 		TAROT_DECK_DICT[line[0]] = line[1:]
 
-print(TAROT_DECK_DICT)
+app = Flask(__name__)
 
 @app.route("/")
 def home():
@@ -27,7 +23,7 @@ def cut_deck():
 	cut_deck_image = "static/53c0cce811d9a_thumb900.jpg"
 	return render_template("cards.html", text=text, cut_deck_image=cut_deck_image)
 
-@app.route("/left_deck")
+@app.route("/pick_deck")
 def deck_selection():
 	text = "You make your choice! Five cards are dealt from the deck and laid out before you. Your job is to choose the final three cards to reveal your fate."
 	five_card_image = "static/53c0cce811d9a_thumb900.jpg"
