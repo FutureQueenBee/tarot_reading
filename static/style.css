@@ -21,6 +21,11 @@
     text-align: center;
     color: white;
     font-size: 20px;
+}
+
+a:hover { 
+    background-color: white;
+    opacity: 0.5;
 }                                                                                                                                           
 
 input[type=checkbox] {
