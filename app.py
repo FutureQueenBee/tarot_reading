@@ -39,5 +39,9 @@ def final_five():
 	five_card_image = "static/53c0cce811d9a_thumb900.jpg"
 	return render_template("final_cards.html", text=text, tarot_reading=tarot_reading)
 
+@app.route("/start_over")
+def start_over():
+	return render_template("index.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
